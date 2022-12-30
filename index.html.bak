@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>login form</title>
+		<link rel='stylesheet' href='loginform2.css'/>
+	</head>
+	<body>
+		<div class='allinfo'>
+			<div class='header'>
+				<h3>Welcome back!</h3>
+			</div>
+			<div class='box'>
+				<input type='email' placeholder='username'/>
+				<input type='password' placeholder='password'/>
+				<input class='submit'type='submit' value='LOG IN'/>
+			</div>
+			<div class='footer'>
+				<span class='left'>Forget your password?</span>
+				<span class='right'>Don't have an accout? Get started</span>
+			</div>
+		</div>
+	</body>
+</html>
