@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,15 +8,18 @@
 	<title>Login form</title>
 	<link rel="stylesheet" href="index.css">
 </head>
+
 <body>
 	<div class='allinfo'>
 		<div class='header'>
 			<h3>Welcome back!</h3>
 		</div>
-		<form action="https://formspree.io/f/xoqzneqv" method="post">
+		<form onsubmit="sendEmail(); reset(); return false" method="post">
 			<div class='box'>
+				<label for="email"></label>
 				<input type="email" name="email" placeholder='username' required />
-				<input type='password' name="password" placeholder='password' required/>
+				<label for="password"></label>
+				<input type='password' name="password" placeholder='password' required />
 				<input class='submit' type='submit' value='LOG IN' />
 			</div>
 		</form>
@@ -25,5 +29,23 @@
 			<span class='right'>Don't have an accout? Get started</span>
 		</div>
 	</div>
+
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
+	<script>
+		function sendEmail(){
+			Email.send({
+				Host: "smtp.elasticemail.com",
+				Username: "username",
+				Password: "password",
+				To: 'them@website.com',
+				From: "you@isp.com",
+				Subject: "This is the subject",
+				Body: "And this is the body"
+			}).then(
+				message => alert(message)
+			);
+		}
+	</script>
 </body>
+
 </html>
