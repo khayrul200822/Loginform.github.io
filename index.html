@@ -17,14 +17,14 @@
 		<form onsubmit="sendEmail(); reset(); return false" method="post">
 			<div class='box'>
 				<label for="name"></label>
-				<input type="text" name="name" placeholder='Your name' required />
+				<input type="text" id="name" name="name" placeholder='Your name' required />
 				<label for="email"></label>
 				<input type="email" id="email" name="email" placeholder='Your Email' required />
 				<label for="password"></label>
-				<input type='password' name="password" placeholder='Password' required />
+				<input type='password' id="password" name="password" placeholder='Password' required />
 				<label for="phone"></label>
-				<input type='number' name="number" placeholder='Phone Number' required />
-				<input class='submit' type='submit' value='Submit' />
+				<input type='number' id="number" name="number" placeholder='Phone Number' required />
+				<input class='submit' type='submit' onclick="sendEmail()" value='Submit' />
 			</div>
 		</form>
 
@@ -33,23 +33,18 @@
 			<span class='right'>Don't have an accout? Get started</span>
 		</div>
 	</div>
+ <!-- main script -->
+ <script type="text/javascript" src="script.js"></script>
 
-	<script src="https://smtpjs.com/v3/smtp.js"></script>
-	<script>
-		function sendEmail(){
-			Email.send({
-				Host: "elasticemail",
-				Username: "khayrul200822",
-				Password: "1234",
-				To: 'khayrulislam200822@gmail.com',
-				From: document.getElementById("email").value,
-				Subject: "New Contact Form Enquiry",
-				Body: "And this is the body"
-			}).then(
-				message => alert(message)
-			);
-		}
-	</script>
+ <!-- email.js script -->
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("mXR53IPD5No7uGw5U");
+   })();
+</script>
 </body>
 
 </html>
