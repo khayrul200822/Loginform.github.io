@@ -2,7 +2,6 @@ function sendEmail() {
     let params = {
         name: document.getElementById("name").value,
         email: document.getElementById("email").value,
-        phone: document.getElementById("phone").value
     }
 
     const serviceID = "service_ncw969m";
